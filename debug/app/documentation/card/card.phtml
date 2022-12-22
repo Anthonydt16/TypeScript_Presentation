@@ -1,0 +1,31 @@
+<?php
+use Kernel\Security\Vulnerability\Xss;
+use Kernel\Security\Vulnerability\Csrf;
+use Kernel\Html\Attribute;
+use Kernel\Html\Builder;
+use Kernel\Html\Output;
+use Kernel\Convert\Encoded;
+use Kernel\Convert\Number;
+use Kernel\Url\Location;
+?>
+
+
+
+<!-- 
+Vue du composant Card.
+Author: chris
+Version: 1.0
+Categorie: Component template
+ -->
+<documentation-card>
+    <div>
+        <h2><?= $title ?></h2>
+        <p><?= $texte ?></p>
+        <ul>
+            <?php foreach ($list as $item) { ?>
+                <li><a href="<?=$item[1]?>"><?= $item[0] ?></a></li>
+            <?php } ?>
+        </ul>
+    </div>
+
+</documentation-card>

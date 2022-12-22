@@ -1,0 +1,68 @@
+[
+  {
+    "name": "accueil",
+    "created": "2022-11-14T12:53:30.2238019+01:00",
+    "madeby": "chris",
+    "paths": [
+      "debug/app/accueil/accueil.js",
+      "debug/app/accueil/accueil.less",
+      "debug/app/accueil/accueil.php",
+      "debug/app/accueil/accueil.phtml"
+    ]
+  },
+  {
+    "name": "navbar",
+    "created": "2022-11-14T12:53:58.4513943+01:00",
+    "madeby": "chris",
+    "paths": [
+      "debug/app/navbar/navbar.js",
+      "debug/app/navbar/navbar.less",
+      "debug/app/navbar/navbar.php",
+      "debug/app/navbar/navbar.phtml"
+    ]
+  },
+  {
+    "name": "documentation",
+    "created": "2022-11-22T14:31:58.9348894+01:00",
+    "madeby": "chris",
+    "paths": [
+      "debug/app/documentation/documentation.js",
+      "debug/app/documentation/documentation.less",
+      "debug/app/documentation/documentation.php",
+      "debug/app/documentation/documentation.phtml"
+    ]
+  },
+  {
+    "name": "exemple",
+    "created": "2022-11-22T14:32:14.5983695+01:00",
+    "madeby": "chris",
+    "paths": [
+      "debug/app/exemple/exemple.js",
+      "debug/app/exemple/exemple.less",
+      "debug/app/exemple/exemple.php",
+      "debug/app/exemple/exemple.phtml"
+    ]
+  },
+  {
+    "name": "documentation\\card",
+    "created": "2022-11-22T14:34:10.0727015+01:00",
+    "madeby": "chris",
+    "paths": [
+      "debug/app/documentation/card/card.js",
+      "debug/app/documentation/card/card.less",
+      "debug/app/documentation/card/card.php",
+      "debug/app/documentation/card/card.phtml"
+    ]
+  },
+  {
+    "name": "manuel",
+    "created": "2022-12-07T15:39:09.0150207+01:00",
+    "madeby": "chris",
+    "paths": [
+      "debug/app/manuel/manuel.js",
+      "debug/app/manuel/manuel.less",
+      "debug/app/manuel/manuel.php",
+      "debug/app/manuel/manuel.phtml"
+    ]
+  }
+]

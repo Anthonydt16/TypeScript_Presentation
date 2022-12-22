@@ -1,0 +1,38 @@
+@import '../../../../.kernel/theme.less';
+
+
+
+// Style du composant Card.
+// Author: chris
+// Version: 1.0
+// Categorie: Component style
+documentation-card {
+	margin: 20px;
+
+	div{
+		background-color: @gray-fonce;
+		height: 13rem;
+		width: 16rem;
+		padding:10px;
+		h2,li,p{
+			margin-bottom: 5px;
+		}
+		ul{
+			li{
+				list-style: none;
+				color: @blue-clair;
+				text-decoration: underline;
+			}
+		}
+	}
+
+}
+
+
+
+// Style responsive du composant Card.
+@media all and (max-width: @responsive-max-width) {
+	documentation-card {
+
+	}
+}

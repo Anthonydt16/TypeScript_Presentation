@@ -1,0 +1,59 @@
+@import '../../../.kernel/theme.less';
+@import '../../../debug/lib/less/boxcode.less';
+
+
+// Style du composant Accueil.
+// Author: chris
+// Version: 1.0
+// Categorie: Component style
+accueil {
+	section{
+
+		width: 100vw;
+		height: 66vh;
+		.buttonAccueil{
+			width: 130px;
+			height: 60px;
+			background-color: @white;
+			color: @black;
+			&:hover{
+				filter: brightness(0.8);
+			}
+		}
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 30px;
+		justify-content: center;
+		h1{
+			font-size: 3rem;
+			font-weight: 600;
+			margin-right: 30px;
+		}
+		&.versionSection{
+			 height: 3vh;
+			background-color: @black-clair;
+			p{
+				a{
+					&.version{
+						color: @blue-clair;
+						text-decoration: underline;
+						&:hover{
+							filter: brightness(0.8);
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
+
+
+
+// Style responsive du composant Accueil.
+@media all and (max-width: @responsive-max-width) {
+	accueil {
+
+	}
+}

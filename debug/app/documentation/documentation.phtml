@@ -1,0 +1,206 @@
+<?php
+
+use Controller\Documentation\Card;
+use Kernel\Security\Vulnerability\Xss;
+use Kernel\Security\Vulnerability\Csrf;
+use Kernel\Html\Attribute;
+use Kernel\Html\Builder;
+use Kernel\Html\Output;
+use Kernel\Convert\Encoded;
+use Kernel\Convert\Number;
+use Kernel\Url\Location;
+?>
+
+
+
+<!-- 
+Vue du composant Documentation.
+Author: chris
+Version: 1.0
+Categorie: Component template
+ -->
+<documentation>
+	<section>
+        <h1>TypeScript Information</h1>
+        <div class="container_cards">
+            <?php
+             new Card("Démarrer avec TypeScript", "Comment développer en TypeScript", [['L\'origines', '#origines'],['Comment démarrer?', '#demarrer']]);
+            ?>
+            <?php
+            new Card("La particularité de TypeScript", "La transpilation comment ça marche avec TypeScript", [['Pourquoi la transpilation ?', '#transpilation'], ['Comment ça fonctionne ?', '#comment']]);
+            ?>
+            <?php
+            new Card("Exemple de code", "les exemple comparatif entre du JavaScript et du TypeScript", [['Exemple de code simple typage', '#fonctionS'], ['Exemple de code TypeScript', '#typageClasse']]);
+            ?>
+        </div>
+
+    </section>
+    <section class="start">
+        <div class="block">
+            <h2 id="origines">Les origines de TypeScript</h2>
+            <h3>Les origines</h3>
+            <p>En parlant de TypeScript, c'est un langage de programmation open source pour développer des applications volumineuses et compliquées. TypeScript a été développé par l'un des géants de la technologie - Microsoft - en 2012 et la véritable raison de sa création était de gérer des applications à grande échelle. Contenant un typage facultatif. En outre, il compile en JavaScript brut.
+            </p>
+            <br>
+            <p>
+                Javascript n’est pas orienté objet alors il ne prosperera jamais coté back dans l’industrie d’ou la création de typecript lui orienté objet
+            </p>
+            <h3>La définitions</h3>
+            <p>Développé et maintenu par Microsoft, TypeScript est un langage de programmation open source orienté objet. C'est un sur-ensemble de JavaScript, contenant un typage facultatif. En outre, il compile en JavaScript brut.
+            </p>
+            <br>
+            <p>
+                En un mot, TypeScript est un langage de programmation compilé statiquement pour écrire du code JavaScript clair et concis. Il remplit le même objectif que JavaScript et peut être utilisé à la fois pour les applications côté client et côté serveur. De plus, les bibliothèques de JavaScript sont également compatibles avec TypeScript.
+            </p>
+            <h3>Popularité</h3>
+            <p>TypeScript et JavaScript sont respectivement les deuxième et troisième langages les plus populaires avec lesquels les développeurs souhaitent travailler</p>
+            <br>
+            <h2 id="demarrer">Démarrer un projet avec du TypeScript</h2>
+
+            <p> Il faut savoir que TypeScript n'est pas encore supporter par les navigateurs.</p>
+            <p>Mais en revanche pour démarrer un projet ou un simple fichier</p>
+            <br>
+            <h3> Télécharger TypeScript</h3>
+            <p>
+                TypeScript peut être installé via trois voies d'installation selon la façon dont vous avez l'intention de l'utiliser : un module npm, un package NuGet ou une extension Visual Studio.
+            </p>
+            <br>
+            <p>
+                Si vous utilisez Node.js, vous voulez la version npm. Si vous utilisez MSBuild dans votre projet, vous souhaitez le package NuGet ou l'extension Visual Studio.
+            </p>
+            <p>Pour notre exemple on utilisera <strong>npm</strong> Voici la commande :</p>
+            <div>
+            <pre class="boxcode"><code class="language-NPM">
+            npm install -g typescript
+                </code></pre>
+            </div>
+            <br>
+            <p>Puis une fois installer en associant l'extension <strong>.ts</strong> à un fichier, il sera détecter. En revanche comme TS et transpiler à JavaScript il faut des outils pour cela et ce sont souvent des frameworks JS comme NodeJS dans l'exemple de npm</p>
+            <h3>d'autre Transpileurs compatibles TypeScript</h3>
+            <div>
+                <div class="list">
+                    <p><a href="https://babeljs.io/">Babel</a>
+                        est un transpileur JavaScript très populaire qui prend en charge les fichiers TypeScript via le plugin @babel/preset-typescript.
+                    </p>
+                </div>
+                <div class="list">
+                    <p><a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html">tsc</a>
+                        est le compilateur TypeScript officiel. Il prend en charge les fichiers TypeScript et génère des fichiers JavaScript.
+                    </p>
+                </div>
+                <div class="list">
+                    <p><a href="https://swc.rs/docs/getting-started">SWC</a>
+                        est un transpileur rapide créé dans Rust qui prend en charge de nombreuses fonctionnalités de Babel, y compris TypeScript.
+                    </p>
+                </div>
+                <div class="list">
+                    <p><a href="https://github.com/alangpierce/sucrase#sucrase/">Sucrase</a>
+                        est un fork Babel axé sur la vitesse pour une utilisation en mode développement. Sucrase prend en charge TypeScript de manière native.
+                    </p>
+                </div>
+            </div>
+
+            <h2>La particularité de TypeScript</h2>
+            <h3 id="transpilation">Pourquoi la transpilation ?</h3>
+            <p>TypeScript est un langage de programmation open-source créé par Microsoft qui est souvent utilisé pour développer des applications web et des applications mobiles. Le principal avantage de TypeScript par rapport à d'autres langages de programmation tels que JavaScript est qu'il permet aux développeurs d'utiliser des fonctionnalités avancées telles que les types de données statiques et les classes. Ces fonctionnalités permettent d'écrire du code plus structuré et plus facile à maintenir, mais elles ne sont pas prises en charge par tous les navigateurs web et les environnements JavaScript.</p>
+            <p>La transpilation de TypeScript en JavaScript permet de contourner ce problème en convertissant le code TypeScript en code JavaScript conforme aux normes ECMAScript (ES) en vigueur. Cela permet aux développeurs d'utiliser les fonctionnalités avancées de TypeScript dans les navigateurs web et les environnements JavaScript qui ne les prennent pas en charge nativement.</p>
+            <h3 id="comment">Comment ça marche ?</h3>
+            <p>Le processus de transpilation de TypeScript en JavaScript se déroule en plusieurs étapes :</p>
+                <ul class="list">
+                    <li>
+                        Le code source TypeScript est analysé par le compilateur TypeScript pour détecter les erreurs de syntaxe et de type. Si des erreurs sont détectées, le compilateur affiche des messages d'erreur pour aider les développeurs à les corriger.
+                    </li>
+                    <li>
+                        Une fois que le code TypeScript est valide, il est converti en code JavaScript conforme aux normes ECMAScript (ES) en vigueur. Cette étape de la transpilation permet d'utiliser les fonctionnalités avancées de TypeScript dans les navigateurs web et les environnements JavaScript qui ne prennent pas en charge ces fonctionnalités.
+                    </li>
+                    <li>
+                        Le code JavaScript transpilé peut être utilisé dans les navigateurs web et les environnements JavaScript comme s'il avait été écrit directement en JavaScript.
+                    </li>
+                </ul>
+            <h2>Exemple de code TypeScript</h2>
+            <h3 id="fonctionS">Fonction simple avec du typage</h3>
+            <p>je vais vous montrer des codes basiques en TypeScript et expliquer le typage</p>
+            <pre class="boxcode" contenteditable="true"><code class="language-TypeScript">
+function sayHello(name: string) {
+  return "Hello, " + name;
+}
+
+console.log(sayHello("Alice"));
+
+                </code></pre>
+            <p>TypeScript est un langage de programmation qui ajoute des fonctionnalités de type statique à JavaScript. Dans l'exemple ci-dessus, la fonction sayHello prend un argument de type string (une chaîne de caractères) et retourne une chaîne de caractères.</p>
+
+            <p> La déclaration du type de l'argument name (string) permet au compilateur TypeScript de vérifier que la fonction est utilisée de manière appropriée. Par exemple, si on essaye d'appeler la fonction en lui passant un nombre à la place d'une chaîne de caractères, le compilateur générera une erreur. Cela peut aider à éviter certains bugs et erreurs de temps d'exécution.</p>
+
+            <p> En résumé, TypeScript est un langage de programmation qui permet de bénéficier des avantages du typage statique en JavaScript.</p>
+
+            <h3 id="typageClasse">Classe avec interface avec la notion de typage</h3>
+            <pre class="boxcode" contenteditable="true"><code class="language-TypeScript">
+class Animal {
+  constructor(public name: string) {}
+
+  move(distanceInMeters: number) {
+    console.log(`${this.name} parcourt ${distanceInMeters}m.`);
+  }
+}
+
+interface Flyable {
+  fly(distanceInMeters: number): void;
+}
+
+class Bird extends Animal implements Flyable {
+  fly(distanceInMeters: number) {
+    console.log(`${this.name} vole ${distanceInMeters}m.`);
+  }
+}
+
+const bird = new Bird('Oiseau');
+bird.move(10); // "Oiseau parcourt 10m."
+bird.fly(20); // "Oiseau vole 20m."
+                </code></pre>
+
+            <p>Dans ce code, la classe Animal est une classe de base avec un constructeur prenant un nom en paramètre. La classe contient également une méthode move() qui affiche un message indiquant la distance parcourue par l'animal.</p>
+
+            <p>La classe Bird hérite de la classe Animal et implémente l'interface Flyable, ce qui signifie qu'elle doit implémenter une méthode fly() ayant la signature définie dans l'interface. La classe Bird implémente cette méthode en affichant un message indiquant la distance volée par l'oiseau.</p>
+
+            <p> Enfin, nous créons une instance de la classe Bird et appelons ses méthodes move() et fly(), ce qui affiche les messages attendus dans la console.</p>
+            <h3>Le même code mais en JavaScript</h3>
+            <p>Pour comparer avant la transpilation et après :</p>
+
+            <pre class="boxcode">
+                <code class="language-TypeScript">
+"use strict";
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  move(distanceInMeters) {
+    console.log(`${this.name} parcourt ${distanceInMeters}m.`);
+  }
+
+}
+
+class Bird extends Animal {
+  fly(distanceInMeters) {
+    console.log(`${this.name} vole ${distanceInMeters}m.`);
+  }
+
+}
+
+const bird = new Bird('Oiseau');
+bird.move(10); // "Oiseau parcourt 10m."
+bird.fly(20); // "Oiseau vole 20m."
+
+                </code>
+            </pre>
+
+            <p>Comme vous pouvez le voir, la syntaxe est légèrement différente en JavaScript, mais la fonctionnalité reste la même. La classe Animal est déclarée avec une méthode constructor() qui initialise les propriétés de la classe, ainsi qu'une méthode move() pour afficher un message indiquant la distance parcourue par l'animal.</p>
+
+            <p>La classe Bird hérite de la classe Animal en utilisant la syntaxe extends, et implémente la méthode fly() pour afficher un message indiquant la distance volée par l'oiseau.</p>
+
+            <p>Enfin, nous créons une instance de la classe Bird et appelons ses méthodes move() et fly(), ce qui affiche les messages attendus dans la console. L'interface Flyable n'est pas mentionnée dans le code JavaScript transpilé, car les interfaces ne sont pas prises en charge en JavaScript, mais elles peuvent être utilisées dans le code TypeScript pour vérifier que les classes respectent une certaine structure.</p>
+        </div>
+    </section>
+</documentation>

@@ -1,0 +1,12 @@
+[
+  {
+    "name": "boxcode",
+    "created": "2022-11-15T14:41:40.0345239+01:00",
+    "madeby": "chris",
+    "paths": [
+      "debug/lib/js/boxcode.js",
+      "debug/lib/less/boxcode.less",
+      "debug/lib/php/boxcode.php"
+    ]
+  }
+]

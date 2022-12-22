@@ -1,0 +1,90 @@
+@import '../../../.kernel/theme.less';
+@import '../../../debug/lib/less/boxcode.less';
+
+
+// Style du composant Documentation.
+// Author: chris
+// Version: 1.0
+// Categorie: Component style
+documentation {
+	height: 100%;
+
+	section{
+		height: 89vh;
+		&.start{
+			background-color: @black-clair;
+			height: 100%;
+		}
+		h1, h2{
+			text-align: center;
+			margin: 20px;
+			text-decoration: underline;
+		}
+		h3{
+			margin: 20px;
+			text-decoration: underline;
+			color: @blue-clair;
+		}
+		div.block{
+			background-color: @gray-fonce;
+			margin: 0 8vw;
+			padding: 20px;
+			div pre{
+				width: 100%;
+			}
+			div{
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				flex-wrap: wrap;
+
+				div.list{
+					margin: 20px 8vw;
+					padding: 20px;
+					width: 294px;
+					&:not(last-child){
+						border-right: 1px solid @border-color;
+					}
+
+					a{
+						color: @blue-clair;
+					}
+				}
+			}
+
+			p{
+				margin: 20px;
+			}
+			ul.list{
+				margin: 20px;
+				li{
+					margin: 10px;
+				}
+			}
+
+		}
+
+	}
+
+	.container_cards{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: stretch;
+		flex-wrap: wrap;
+
+	}
+	.boxcode{
+		width: 100%;
+	}
+}
+
+
+
+// Style responsive du composant Documentation.
+@media all and (max-width: @responsive-max-width) {
+	documentation {
+
+	}
+}

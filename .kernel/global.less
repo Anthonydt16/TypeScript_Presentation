@@ -1,0 +1,92 @@
+@import './theme.less';
+
+
+//police
+
+@font-face {
+    font-family: 'segoeui-bold';
+    src: url('/../assets/font/segoeui-bold.woff2 ');
+}
+
+@font-face {
+    font-family: 'segoeui-regular';
+    src: url('/../assets/font/segoeui-regular.woff2 ');
+}
+
+@font-face {
+    font-family: 'segoeui-light';
+    src: url('/../assets/font/segoeui-light.woff2 ');
+}
+
+@font-face {
+    font-family: 'segoeui-semibold';
+    src: url('/../assets/font/segoeui-semibold.woff2 ');
+}
+
+// Style global à toute l'application.
+* {
+    font-family: @font-family;
+    color: @white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+    &::selection {
+        user-select: none;
+    }
+
+    &::-webkit-resizer {
+        
+    }
+    
+    &::-webkit-scrollbar {
+        
+    }
+
+    &::-webkit-scrollbar-corner {
+        
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        
+        &:hover {
+        
+        }
+
+        &:active {
+        
+        }
+    }    
+}
+
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: @blue-clair;
+    
+	main {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+
+
+// Style responsive global à toute l'application.
+@media all and (max-width: @responsive-max-width) {
+    * {
+    
+    }
+    
+
+    
+    body {
+
+    }
+}

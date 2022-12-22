@@ -1,0 +1,206 @@
+<?php
+use Kernel\Security\Vulnerability\Xss;
+use Kernel\Security\Vulnerability\Csrf;
+use Kernel\Html\Attribute;
+use Kernel\Html\Builder;
+use Kernel\Html\Output;
+use Kernel\Convert\Encoded;
+use Kernel\Convert\Number;
+use Kernel\Url\Location;
+?>
+
+
+
+<!-- 
+Vue du composant Manuel.
+Author: chris
+Version: 1.0
+Categorie: Component template
+ -->
+<manuel>
+    <section class="start">
+        <h1>Manuel</h1>
+        <h2>Sommaire</h2>
+        <ul>
+            <li><a href="#type">1- Les différent type </a></li>
+            <li><a href="#fonction">2-  fonctions</a></li>
+            <li><a href="#classe">3- Les classes</a></li>
+        </ul>
+    </section>
+    <section>
+        <div class="block">
+            <h2 id="type">Les différents types dans TypeScript</h2>
+            <h3>Les type généraux</h3>
+            <p>Les types généraux sont les types de base de TypeScript. Ils sont utilisés pour définir les variables et les paramètres de fonction.</p>
+            <p>Les types généraux sont:</p>
+            <ul>
+                <li><strong>boolean</strong> pour les valeurs booléennes (true ou false)</li>
+                <li><strong>number</strong> pour les nombres entiers ou décimaux</li>
+                <li><strong>string</strong> pour les chaînes de caractères</li>
+                <li><strong>array</strong> pour les tableaux de valeurs</li>
+                <li><strong>tuple</strong> pour les tableaux de taille fixe avec des éléments de différents types</li>
+                <li><strong>enum</strong> pour les ensembles de valeurs nommées</li>
+                <li><strong>any</strong> pour indiquer que la variable peut être de n'importe quel type</li>
+                <li><strong>void</strong>pour indiquer que la fonction ne renvoie aucune valeur</li>
+            </ul>
+            <table>
+                <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Exemple</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>boolean</td>
+                    <td>let isDone: boolean = false;</td>
+                </tr>
+                <tr>
+                    <td>number</td>
+                    <td>let decimal: number = 6;</td>
+                </tr>
+                <tr>
+                    <td>string</td>
+                    <td>let color: string = "blue";</td>
+                </tr>
+                <tr>
+                    <td>array</td>
+                    <td>let list: number[] = [1, 2, 3];</td>
+                </tr>
+                <tr>
+                    <td>tuple</td>
+                    <td>let x: [string, number];</td>
+                </tr>
+                <tr>
+                    <td>enum</td>
+                    <td>enum Color {Red, Green, Blue}</td>
+                </tr>
+                <tr>
+                    <td>any</td>
+                    <td>let notSure: any = 4;</td>
+                </tr>
+                <tr>
+                    <td>void</td>
+                    <td>function warnUser(): void {alert("This is my warning message");}</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>Il y a de nombreux avantage au typage qui sont les suivants</p>
+            <p>Améliorer la lisibilité du code en clarifiant les intentions des développeurs et en facilitant la compréhension du code par d'autres personnes.
+
+            <p>Réduire les erreurs de programmation en détectant les incompatibilités de type lors de la compilation du code, ce qui peut éviter des erreurs difficiles à repérer lors de l'exécution du programme.</p>
+
+            <p>Faciliter la maintenance et l'évolution du code en permettant aux développeurs de mettre à jour le code de manière plus structurée et contrôlée.</p>
+
+            <p>Accélérer le développement en offrant des outils de programmation plus avancés, tels que la reconnaissance de type automatique, la recherche de code, etc.</p>
+
+            <p>En résumé, le typage est une bonne chose dans TypeScript car il permet d'améliorer la lisibilité, la qualité et la maintenabilité du code, ce qui peut rendre le développement plus efficace et moins sujet aux erreurs.</p>
+
+            <h2 id="fonction">Les fonctions</h2>
+            <h3>Fonction traditionnelle</h3>
+            <pre class="boxcode" contenteditable="true"><code class="language-TypeScript">
+function add(x: number, y: number): number {
+return x + y;
+}
+            </code></pre>
+            <p>Dans cet exemple, la fonction add() prend deux arguments de type number (x et y) et retourne un résultat de type number. La syntaxe : number après chaque argument et avant le corps de la fonction indique le type des données attendu pour cet argument ou le type de données retourné par la fonction.</p>
+            <h3>Fonction anonyme</h3>
+            <pre class="boxcode" contenteditable="true"><code class="language-TypeScript">
+let myAdd = function(x: number, y: number): number { return x + y; };
+            </code></pre>
+            <p>La fonction anonyme est affectée à la variable myAdd. Les types des arguments et du résultat sont définis de la même manière que pour les fonctions traditionnelles.</p>
+            <h3>Fonction fléchée</h3>
+            <pre class="boxcode" contenteditable="true"><code class="language-TypeScript">
+let myAdd = (x: number, y: number): number => { return x + y; };
+            </code></pre>
+            <p>La fonction fléchée est affectée à la variable myAdd. Les types des arguments et du résultat sont définis de la même manière que pour les fonctions traditionnelles.</p>
+            <h2 id="classe">Les classes</h2>
+            <h3>Classe</h3>
+            <p>Les classes sont un concept de programmation orientée objet (POO) qui permet de modéliser des objets dans un programme en regroupant des données (propriétés) et des comportements (méthodes) en une seule entité. En TypeScript, les classes peuvent être définies en utilisant la syntaxe class, comme dans l'exemple suivant :</p>
+            <pre class="boxcode" contenteditable="true"><code class="language-TypeScript">
+class Student {
+  name: string;
+  age: number;
+  grades: number[];
+
+  constructor(name: string, age: number, grades: number[]) {
+    this.name = name;
+    this.age = age;
+    this.grades = grades;
+  }
+
+  averageGrade(): number {
+    let total = 0;
+    for (const grade of this.grades) {
+      total += grade;
+    }
+    return total / this.grades.length;
+  }
+}
+            </code></pre>
+            <p>Dans cet exemple, la classe Student définit une classe pour représenter un élève dans une école. La classe déclare trois propriétés : name, qui est le nom de l'élève, age, qui est l'âge de l'élève, et grades, qui est un tableau contenant les notes de l'élève. La classe définit également un constructeur pour initialiser ces propriétés, ainsi qu'une méthode averageGrade() qui calcule la moyenne des notes de l'élève.</p>
+            <h3>Interface</h3>
+            <p>Une interface en TypeScript est un type de données qui définit les propriétés et les méthodes d'un objet, mais ne fournit pas d'implémentation pour ces méthodes. Les interfaces peuvent être utilisées pour définir une structure commune pour différentes classes, ce qui peut être utile pour vérifier la conformité des classes avec une spécification particulière. Voici un exemple d'interface en TypeScript qui peut être utilisé pour définir un élève :</p>
+            <pre class="boxcode" contenteditable="true"><code class="language-TypeScript">
+interface Student {
+  name: string;
+  age: number;
+  grades: number[];
+  averageGrade(): number;
+}
+            </code></pre>
+            <h3>Implémente une classe avec une interface</h3>
+            <p>La classe Student peut être modifiée pour implémenter l'interface Student en utilisant le mot-clé implements, comme dans l'exemple suivant :</p>
+            <pre class="boxcode" contenteditable="true"><code class="language-TypeScript">
+class Student implements Student {
+    name: string;
+    age: number;
+    grades: number[];
+
+    constructor(name: string, age: number, grades: number[]) {
+        this.name = name;
+        this.age = age;
+        this.grades = grades;
+    }
+
+    averageGrade(): number {
+        let total = 0;
+        for (const grade of this.grades) {
+            total += grade;
+        }
+        return total / this.grades.length;
+    }
+}
+            </code></pre>
+            <p>Si l'on essaie de créer une classe qui ne respecte pas l'interface Student, TypeScript détecte l'erreur lors de la compilation du code. Par exemple, la classe suivante ne respecte pas l'interface Student car elle ne définit pas la méthode averageGrade() :</p>
+            <pre class="boxcode" contenteditable="true"><code class="language-TypeScript">
+class Student implements Student {
+    name: string;
+    age: number;
+    grades: number[];
+
+    constructor(name: string, age: number, grades: number[]) {
+        this.name = name;
+        this.age = age;
+        this.grades = grades;
+    }
+}
+            </code></pre>
+            <p>Le code suivant affiche une erreur de compilation :</p>
+            <pre class="boxcode" contenteditable="true"><code class="language-TypeScript">
+error TS2420: Class 'Student' incorrectly implements interface 'Student'.</code></pre>
+            <h3>Héritage</h3>
+            <p>Les classes peuvent hériter des propriétés et des méthodes d'autres classes en utilisant le mot-clé extends. Par exemple, la classe suivante hérite de la classe Student :</p>
+            <pre class="boxcode" contenteditable="true"><code class="language-TypeScript">
+class TerminalStudent extends Student {
+    constructor(name: string, age: number, grades: number[]) {
+        super(name, age, grades);
+    }
+displayName():void {
+    console.log("je suis en Terminal et je m'appelle " + this.name);
+}
+}</code></pre>
+            <p> La classe TerminalStudent définit une nouvelle méthode displayName() qui affiche le nom de l'élève. La classe TerminalStudent hérite de la classe Student, qui définit la méthode averageGrade(). La classe TerminalStudent peut donc utiliser la méthode averageGrade() de la classe Student.</p>
+        </div>
+    </section>
+</manuel>
